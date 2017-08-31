@@ -1,0 +1,201 @@
+@import 'basic';
+
+
+@import 'normalize';
+@import 'reset';
+
+/* Clearfix prevents floating boxes floating out of container */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Basic Font settings */
+
+html {
+  font-size: 1.25em;
+  line-height: 1.6;
+}
+
+
+/* And here follows your custom CSS */
+
+
+/* ------------------------ */
+/* body background          */
+/* ------------------------ */
+
+body {
+  background: linear-gradient(to bottom left, lightblue, aliceblue);
+  min-height: 100vh;
+}
+
+
+/* ------------------------ */
+/* settings aside           */
+/* ------------------------ */
+
+#settings {
+  position: absolute;
+  width: calc(100% - 1.5em);
+  right: .75rem;
+  top: .75rem;
+  background: linear-gradient(to bottom left, lightslategray, lightsteelblue);
+  border-radius: .5em;
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, .3);
+  overflow-y: hidden;
+  display: none;
+}
+
+/* ------------------------ */
+/* checkbox and label       */
+/* ------------------------ */
+
+#open-settings {
+  display: none;
+}
+
+[for="open-settings"] {
+  display: block;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.75rem;
+  z-index: 1;
+}
+
+
+/* ------------------------ */
+/* show setting if checkbox */
+/* is checked + animation   */
+/* ------------------------ */
+
+#open-settings:checked + * + #settings {
+  display: block;
+}
+
+/* ---------------------------- */
+/* form and link padding/border */
+/* ---------------------------- */
+
+#settings form,
+#settings a {
+  display: block;
+  padding: .5rem;
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+
+}
+
+/* ---------------------------- */
+/* form                         */
+/* ---------------------------- */
+
+#settings form {
+  border-top: 2rem solid lightslategray;
+}
+
+#settings form input[type=search] {
+  box-shadow: inset 1px 1px 2px #666;
+  border: none;
+  background-color: white;
+  width: calc(100% - 2.5rem);
+  padding: .5rem;
+  margin-right: .5rem;
+  line-height: 1.5rem;
+}
+
+#settings button[type="submit"] {
+  border: none;
+  background: url('../images/icon-sprite.svg') no-repeat;
+  background-size: 4.5rem;
+  text-indent: -999em;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ---------------------------- */
+/* settings links               */
+/* ---------------------------- */
+
+#settings a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* ---------------------------- */
+/* login options                */
+/* ---------------------------- */
+
+#settings .login-options a {
+  border: none;
+}
+
+#settings .login-options a.button {
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: .5em;
+  background: linear-gradient(to bottom, #459436 0%, #3cb933 50%, #3e952d 50%, #66ac33 100%);
+  margin: .5rem;
+}
+
+/* ------------------------ */
+/* icon sprites             */
+/* ------------------------ */
+
+#settings a:before {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: text-bottom;
+  background: url('../images/icon-sprite.svg') no-repeat;
+  background-size: 4.5rem;
+  margin-right: .5rem;
+}
+
+a#menu-start:before {
+  background-position: -1.5rem 0;
+}
+
+a#menu-browse:before {
+  background-position: -3rem 0;
+}
+
+a#menu-radio:before {
+  background-position: 0 -1.5rem;
+}
+
+a#menu-library:before {
+  background-position: -1.5rem -1.5rem;
+}
+
+a#menu-sign-in:before {
+  background-position: -3rem -1.5rem;
+}
+
+a#menu-create-account:before {
+  background-position: 0 -3rem;
+}
+
+/* ------------------------ */
+/* media query for desktop  */
+/* ------------------------ */
+
+@media screen and (min-width: 920px) {
+  html {
+    font-size: 1em;
+  }
+  #settings {
+    width: auto;
+    right: 1.5em;
+    top: 1.5em;
+  }
+  [for="open-settings"] {
+    right: 2.25em;
+    top: 2.5em;
+  }
+  #settings .login-options {
+    display: inline-block;
+  }
+}

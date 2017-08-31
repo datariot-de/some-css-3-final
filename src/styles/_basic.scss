@@ -1,0 +1,27 @@
+label[for="open-settings"] {
+  text-indent: -999em;
+}
+
+label[for="open-settings"],
+label[for="open-settings"]:before,
+label[for="open-settings"]:after {
+  cursor: pointer;
+  height: .2rem;
+  width: 2rem;
+  background: lightslategray;
+  position: absolute;
+  display: block;
+  content: '';
+}
+label[for="open-settings"]:before {
+  top: -.45rem;
+}
+label[for="open-settings"]:after {
+  bottom: -.45rem;
+}
+
+#open-settings:checked + label[for="open-settings"],
+#open-settings:checked + label[for="open-settings"]:before,
+#open-settings:checked + label[for="open-settings"]:after {
+  background-color: white;
+}
