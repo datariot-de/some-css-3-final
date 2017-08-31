@@ -1,5 +1,35 @@
 @import 'basic';
 
+@font-face {
+    font-family: 'tex_gyre_heros';
+    src: url('../fonts/texgyreheros-regular-webfont.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'tex_gyre_heros';
+    src: url('../fonts/texgyreheros-bold-webfont.woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'tex_gyre_heros';
+    src: url('../fonts/texgyreheros-italic-webfont.woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'tex_gyre_heros';
+    src: url('../fonts/texgyreheros-bolditalic-webfont.woff');
+    font-weight: bold;
+    font-style: italic;
+
+}
 
 @import 'normalize';
 @import 'reset';
